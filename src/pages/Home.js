@@ -15,7 +15,7 @@ const Home = () => {
 
       if (response.ok) {
         setWorkouts(json);
-        console.log(isCreated);
+        isSetCreated(false);
       }
     };
 
@@ -23,11 +23,21 @@ const Home = () => {
   }, [isCreated]);
 
   return (
-    <Box p="3rem" bg={colors.bgColor} display="flex" justifyContent='space-around'>
+    <Box
+      p="3rem"
+      bg={colors.bgColor}
+      display="flex"
+      justifyContent="space-around"
+    >
       <Box>
         {workouts &&
           workouts.map((workout) => (
-            <WorkoutDetails key={workout.id} workout={workout} />
+            <WorkoutDetails
+              key={workout.id}
+              workout={workout}
+              isCreated={isCreated}
+              isSetCreated={isSetCreated}
+            />
           ))}
       </Box>
       <WorkoutForm isCreated={isCreated} isSetCreated={isSetCreated} />

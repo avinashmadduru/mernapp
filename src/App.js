@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 
 export default function App() {
   return (
-    <Box maxW='100vw' maxH='100vh'>
+    <Box maxW="100vw" maxH="100vh">
       <BrowserRouter>
         <Navbar />
         <Routes>
